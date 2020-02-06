@@ -1,2 +1,2 @@
 # customer-application
-A simple application to provide data for external clients as resr services which runs on a docker container.
+A simple spring boot application to provide data for clients as rest services which runs on a docker container.

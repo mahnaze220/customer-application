@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 /**
  * This entity contains teams's champions. 
  *
@@ -12,47 +17,18 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class TeamChampion {
 
 	@Id 
 	@GeneratedValue 
 	private Long id;
 
+	@NonNull
 	private String teamName;
 
+	@NonNull
 	private Integer champion;
-
-	public TeamChampion() {
-		super();
-	}
-
-	public TeamChampion(String teamName, Integer champion) {
-		super();
-		this.teamName = teamName;
-		this.champion = champion;
-	}
-
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-
-	public Integer getChampion() {
-		return champion;
-	}
-
-	public void setChampion(Integer champion) {
-		this.champion = champion;
-	}
-
-	@Override
-	public String toString() {
-		final StringBuilder sb = new StringBuilder("TeamChampion {");
-		sb.append("Team Name='").append(teamName).append('\'');
-		sb.append(", Champion='").append(champion).append('\'');
-		return sb.toString();
-	}
 }

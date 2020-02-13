@@ -3,6 +3,10 @@ package com.customer.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * This DTO contains request data for retrieving dimensions. 
@@ -11,26 +15,14 @@ import io.swagger.annotations.ApiModelProperty;
  * @Jan 31, 2020
  */
 
+@Data
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class CustomerDimensionRequest {
 
+	@NonNull
 	@JsonProperty("dimensionName")
 	@ApiModelProperty(notes = "dimensionName")
 	private String dimensionName;
 
-	public CustomerDimensionRequest() {
-		super();
-	}
-
-	public CustomerDimensionRequest(String dimensionName) {
-		super();
-		this.dimensionName = dimensionName;
-	}
-
-	public String getDimensionName() {
-		return dimensionName;
-	}
-
-	public void setDimensionName(String dimensionName) {
-		this.dimensionName = dimensionName;
-	}
 }

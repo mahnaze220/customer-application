@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 /**
  * This entity contains teams's revenues. 
  *
@@ -12,48 +17,18 @@ import javax.persistence.Id;
  */
 
 @Entity
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class TeamRevenue {
 
 	@Id 
 	@GeneratedValue 
 	private Long id;
 
+	@NonNull
 	private String teamName;
 
+	@NonNull
 	private Integer revenue;
-
-	public TeamRevenue() {
-		super();
-	}
-
-	public TeamRevenue(String teamName, Integer revenue) {
-		super();
-		this.teamName = teamName;
-		this.revenue = revenue;
-	}
-
-
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-
-	public Integer getRevenue() {
-		return revenue;
-	}
-
-	public void setRevenue(Integer revenue) {
-		this.revenue = revenue;
-	}
-
-	@Override
-	public String toString() {
-		final StringBuilder sb = new StringBuilder("TeamRevenue {");
-		sb.append("Team Name='").append(teamName).append('\'');
-		sb.append(", Revenue='").append(revenue).append('\'');
-		return sb.toString();
-	}
 }

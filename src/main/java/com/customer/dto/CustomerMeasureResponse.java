@@ -5,6 +5,10 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * This DTO contains response data for fetched measures. 
@@ -13,39 +17,19 @@ import io.swagger.annotations.ApiModelProperty;
  * @Jan 31, 2020
  */
 
+@Data
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class CustomerMeasureResponse {
 
+	@NonNull
 	@JsonProperty("name")
 	@ApiModelProperty(notes = "name")
 	private String name;
 	
+	@NonNull
 	@JsonProperty("data")
 	@ApiModelProperty(notes = "data")
 	private List<Integer> data;
 
-	public CustomerMeasureResponse() {
-		super();
-	}
-
-	public CustomerMeasureResponse(String name, List<Integer> data) {
-		super();
-		this.name = name;
-		this.data = data;
-	}
-
-	public List<Integer> getData() {
-		return data;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setData(List<Integer> data) {
-		this.data = data;
-	}
 }
